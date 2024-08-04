@@ -20,7 +20,7 @@ int timer2;
 
 void setup(){
   
-  // myPort = new Serial(this,"/dev/ttyUSB0",115200);
+  myPort = new Serial(this,"/dev/ttyUSB0",115200);
   
   cp5 = new ControlP5(this);
   PFont pfont = createFont("Consolas",18,true);
@@ -111,8 +111,8 @@ public void sendingToArduino(){
   // This is for velocimeter
   if((vel.valorEntero!=velocidad) && ((millis()-timer)>100)){
     dataVel = "0D"+hex(vel.valorEntero,2)+"000000\n";
-    // myPort.write(dataVel);  
-    //println(dataVel);
+    myPort.write(dataVel);  
+    println(dataVel);
     timer = millis();
     velocidad = vel.valorEntero;
   }
@@ -120,8 +120,9 @@ public void sendingToArduino(){
   if((tacometro.valorEntero!=rpmValue)&&((millis()-timer2)>100)){
     int A = valueA(tacometro.valorEntero);
     int B = valueB(A,tacometro.valorEntero);
-    dataRpm = "0C"+hex(A,2)+hex(B,2)+"0000";
+    dataRpm = "0C"+hex(A,2)+hex(B,2)+"0000\n";
     println(dataRpm);
+    myPort.write(dataRpm); 
     timer2 = millis();
     rpmValue = tacometro.valorEntero;
   }
