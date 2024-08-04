@@ -1,8 +1,12 @@
 class velocimetro
 {
-  float posx,posy,diam,size,valor,valor2,dv;
+  int valor, valorEntero;
+  float posx,posy,diam,size,valor2,dv;
   int r,g,b,rt,gt,bt,min,max,paso;
-  public velocimetro()
+  
+  String label;
+  
+  public velocimetro(String label)
   {
     posx=250;
     posy=250;
@@ -19,6 +23,7 @@ class velocimetro
     min=0;
     max=180;
     paso=10;
+    this.label = label;
     
   }
   public void setPosicion(float x,float y)
@@ -54,18 +59,18 @@ public void setColorText( int r,int g, int b)
   this.bt=b;
   
 }
-public void valor(float v)
+public void setValor(int v)
 {
   valor=v;
 }
 
-public int getValue(){
-  return int(valor2);
-}
 public void show()
 {
   dv=valor-valor2;
-  valor2+=dv*0.01;
+  valor2+=dv*0.02;
+  
+  valorEntero = int(round(valor2));
+  
   pushStyle();
   pushMatrix();
   translate(posx,posy);
@@ -77,12 +82,12 @@ public void show()
   ellipse(0,0,diam*1.5,diam*1.5);
   fill(rt,gt,bt);
   textSize(diam*0.1);
-  text(str(int(valor2)),-textWidth(str(int(valor2)))/2,diam*0.35);
-  text("Kms/Hs",-textWidth("Kms/Hs")/2,diam/2);
+  text(str(valorEntero),-textWidth(str(valorEntero))/2,diam*0.35);
+  text(label,-textWidth(label)/2,diam/2);
   noFill();
   strokeWeight(diam*0.01);
   stroke(r,g,b);
-  rect(-textWidth("Kms/Hs")*1.1/2,diam/2-textAscent(),textWidth("Kms/Hs")*1.1,textAscent()*1.2);
+  rect(-textWidth(label)*1.1/2,diam/2-textAscent(),textWidth(label)*1.1,textAscent()*1.2);
   fill(rt,gt,bt);
   for(int i=min;i<=max;i+=paso)
   {
