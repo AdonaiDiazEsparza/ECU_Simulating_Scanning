@@ -27,9 +27,9 @@ First you have to flash your Arduino with the "ECUSim" program (ECUSim.ino). The
 </p>
 
 The app is coded in processing, it connects with an Arduino via USBSerial but, to choose the USB port you only need to change a code from a line, look for:
-'''
+```
  myPort = new Serial(this,"YourPort",115200);
-'''
+```
 and between the "" put the USB port to connect with the Arduino.
 At the moment the App only can set the speed and rpm from the ECU, you can use the other program of "SEND_CAN.ino" to request the values with the PID's codes.
 
