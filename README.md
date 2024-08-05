@@ -23,7 +23,7 @@ The simulated ECU was taken from this [repository](https://github.com/sugiuraii/
 First you have to flash your Arduino with the "ECUSim" program (ECUSim.ino). Then you have to open the app to connect with your Arduino. 
 
 <p align="center">
-<img wicth="460" src="https://github.com/user-attachments/assets/a51a7f65-13dd-4038-a23e-6604e32230a0">
+<img width="460" src="https://github.com/user-attachments/assets/a51a7f65-13dd-4038-a23e-6604e32230a0">
 </p>
 
 The app is coded in processing, it connects with an Arduino via USBSerial but, to choose the USB port you only need to change a code from a line, look for:
@@ -37,3 +37,17 @@ At the moment the App only can set the speed and rpm from the ECU, you can use t
 <img src=https://github.com/user-attachments/assets/780c0a49-474e-46f3-8a2b-89bd86bf5c2f>
 </p>
 
+## ABOUT SCANNER APP
+First you have to flash your arduino to get the values with the program in Arduino (Arduino_Sender_OBDII.ino).
+<p align="center">
+<img width="460" src=https://github.com/user-attachments/assets/35040609-d129-4ae8-b132-25017b3741fc>
+</p>
+
+At the moment the only parameters that show their value are speed and engine RPM. Only need to open the program from the "Scanner_App" folder with the name <b>Scanner_App.pde</b>. The same as the App ECU simulator, you need to change the port USB that is written in the line:
+```
+ myPort = new Serial(this,"YourPort",115200);
+```
+After you modify this line, you can run the program and you'll see a window like the next image, with the Start button you will begin the scanner and can watch the values of RPM and Speed(Km/s). With the Stop buttton you end the scan.
+<p align="center">
+<img width="460" src=https://github.com/user-attachments/assets/780c0a49-474e-46f3-8a2b-89bd86bf5c2f>
+</p>
