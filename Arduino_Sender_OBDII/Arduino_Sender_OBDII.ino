@@ -10,6 +10,8 @@
 #define CAN0_INT 2                              // Set INT to pin 2
 MCP_CAN CAN0(10);                               // Set CS to pin 10
 
+
+
 long unsigned int rxId;
 unsigned char len = 0;
 unsigned char rxBuf[8];
@@ -30,15 +32,13 @@ String start;
 
 void setup() {
   
-Serial.begin(115200);
   pinMode(3,INPUT_PULLUP);
   pinMode(2,INPUT);
 
-  while(CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ) != CAN_OK){
-    Serial.println("Error Initializing MCP2515...");
-  }
-  Serial.println("MCP2515 Initialize");
-  CAN0.setMode(MCP_NORMAL);  
+  while(CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ) != CAN_OK);
+  CAN0.setMode(MCP_NORMAL);
+
+  Serial.begin(115200);
 
 }
 
@@ -73,7 +73,7 @@ void loop() {
       
       delay(1);
     }
-
-    Serial.println(String(velA)+","+String(rpmA)+","+String(rpmB));
+    Serial.print(String(velA)+","+String(rpmA)+","+String(rpmB));
+    delay(50);
   }
 }
