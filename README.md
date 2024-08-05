@@ -52,3 +52,6 @@ After you modify this line, you can run the program and you'll see a window like
 <img src=https://github.com/user-attachments/assets/25b64f95-c8df-4da3-a1f1-92d1645eb769>
 </p>
 
+## NOTE:
+Only the SEND_CAN.ino program was proved with a real ECU computer to receive the values of the Engine rpm, only there's missing the Scanner app to be proved.
+
