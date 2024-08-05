@@ -68,13 +68,12 @@ void loop() {
           if(rxBuf[2] == 0x0D){
             velA = rxBuf[3];
           }
-          
         }
       }
       
       delay(1);
     }
 
-    
+    Serial.println(String(velA)+","+String(rpmA)+","+String(rpmB));
   }
 }
