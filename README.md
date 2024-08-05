@@ -1,4 +1,4 @@
-# SIMULATING AND DIAGNOSTIC AN ECU COMPUTER WITH OBDII CODES
+# SIMULATING AND SCANNING AN ECU COMPUTER WITH OBDII CODES
 The purpose of this project is to watch how the PID codes work with an visual interface where you can change the values of the speed, rpm, temperature, and other sensor values that an ECU has.  The ECU is simulated with an arduino nano. It supports Arduino UNO. 
 
  <p align="center">
@@ -49,5 +49,6 @@ At the moment the only parameters that show their value are speed and engine RPM
 ```
 After you modify this line, you can run the program and you'll see a window like the next image, with the Start button you will begin the scanner and can watch the values of RPM and Speed(Km/s). With the Stop buttton you end the scan.
 <p align="center">
-<img src=https://github.com/user-attachments/assets/780c0a49-474e-46f3-8a2b-89bd86bf5c2f>
+<img src=https://github.com/user-attachments/assets/25b64f95-c8df-4da3-a1f1-92d1645eb769>
 </p>
+
