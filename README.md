@@ -53,5 +53,6 @@ After you modify this line, you can run the program and you'll see a window like
 </p>
 
 ## NOTE:
-Only the SEND_CAN.ino program was tested with a real ECU computer to receive the values of the Engine rpm, only there's missing the Scanner app to test if the program works with a real ECU.
+- The SEND_CAN.ino program was tested with a real ECU computer to receive the values of the Engine rpm.
+- The Scanner app is already tested with a real ECU, it works and it shows the engine rpm and the speed.
 
